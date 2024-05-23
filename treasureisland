@@ -1,0 +1,32 @@
+print('''
+*******************************************************************************
+ _                                     _     _                 _ 
+| |                                   (_)   | |               | |
+| |_ _ __ ___  __ _ ___ _   _ _ __ ___ _ ___| | __ _ _ __   __| |
+| __| '__/ _ \/ _` / __| | | | '__/ _ \ / __| |/ _` | '_ \ / _` |
+| |_| | |  __/ (_| \__ \ |_| | | |  __/ \__ \ | (_| | | | | (_| |
+ \__|_|  \___|\__,_|___/\__,_|_|  \___|_|___/_|\__,_|_| |_|\__,_|
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+
+crossroad = input('''You're at a cross road. Where do you want to go? Type "left" or "right"\n''')
+if crossroad.lower() == "left":
+  choices = input('''Great choice! You survived, but barely. It's getting dark and you've just entered the forest. Type "cave" to enter the cave ahead or "tent" to set up camp\n''')
+  if choices.lower() == "cave":
+    building_now = input ('''You've made it to the morning. Let's start the day. You have been walking for a while and see an abandoned building. Type "enter" to enter the building or "pass" to pass the building\n''')
+    if building_now.lower() == "enter":
+      door_selection = input ('As you step into the building there are 3 doors. 1 green, 1 blue and 1 red. Type "green" for the green door, "blue" for the blue door and "red" for the red door\n')
+      if door_selection.lower() == "green":
+        print("You were so close, but now you have to begin again. Game Over.")
+      elif door_selection.lower() == "blue":
+        print("The room is boobytrapped and an axe falls on your head as you open the door, killing you instantly. Game Over.")
+      else:
+        print('There is a cat sitting on the table next to a key and a treasure box. You approach the cat and open the box. Congrats! you made it to the end of the game in one piece!')
+    else:
+      print("You step into a camouflaged hole. Game Over")
+  else:
+    print("You've been mauled by a bear. Game Over")    
+else:
+  print("Oh dear, looks like you've chosen the wrong path and got eaten by a crocodile. Game Over")
