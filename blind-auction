@@ -1,0 +1,35 @@
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+
+print(logo)
+print("Welcome to the secret auction program")
+
+tally = {}
+
+no_bidders = False
+
+while not no_bidders:
+  name = input("What is your name?: ")
+  bid = int(input("What is your bid? :$"))
+  tally[name] = bid
+
+  more_bidders = input("Are there any other bidders? Type 'yes' or 'no'\n").lower()
+
+  clear()
+  
+  if more_bidders == "no":
+    no_bidders = True
+    for i in tally:
+      value = [tally[i]]
+    print(f"The winner is {i} with a bid of ${max(value)}")
